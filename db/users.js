@@ -4,9 +4,11 @@ var records = [
 ];
 
 exports.findByToken = function(token, cb) {
+  console.log(11,token)
   process.nextTick(function() {
     for (var i = 0, len = records.length; i < len; i++) {
       var record = records[i];
+      console.log(12,record)
       if (record.token === token) {
         return cb(null, record);
       }

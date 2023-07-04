@@ -13,6 +13,7 @@ var db = require('./db');
 passport.use(new Strategy(
   function(token, cb) {
     db.users.findByToken(token, function(err, user) {
+      console.log(13,token,user)
       if (err) { return cb(err); }
       if (!user) { return cb(null, false); }
       return cb(null, user);

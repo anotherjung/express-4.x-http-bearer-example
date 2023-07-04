@@ -45,6 +45,11 @@ Use Chrome web browser
 http://127.0.0.1:3000/?access_token=123456789
 ```
 
+Expected console.log
+11, 123456789, user.js, key/token/bearer value
+12, 123456789 + loop, user.js, loops database to match key value
+13, 123456789 + token, server.js, express, passport  
+
 ## Expected Return is HTTP/1.1 401 Unauthorized
 Unauthorized
 
@@ -60,3 +65,7 @@ Use Chrome web browser
 http://127.0.0.1:3000/?access_token=0
 ```
 
+Expected console.log
+11, 0, user.js, key/token/bearer value
+12, 0 + loop, user.js, loops database to match key value
+13, 0 + null, server.js, express, passport  
